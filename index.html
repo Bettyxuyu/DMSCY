@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>´óÄ¾É½²èÔ°´ò¿¨µØÍ¼</title>
+    <title>å¤§æœ¨å±±èŒ¶å›­æ‰“å¡åœ°å›¾</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         #map {
@@ -21,69 +21,69 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // ³õÊ¼»¯µØÍ¼
+        // åˆå§‹åŒ–åœ°å›¾
         const map = L.map('map', {
             crs: L.CRS.Simple,
             minZoom: -1,
             maxZoom: 5
         });
 
-        // Ìæ»»ÎªÄãµÄ²èÔ°Í¼Æ¬URL£¨ĞèÏÈÉÏ´«µ½ImgBB£©
+        // æ›¿æ¢ä¸ºä½ çš„èŒ¶å›­å›¾ç‰‡URLï¼ˆéœ€å…ˆä¸Šä¼ åˆ°ImgBBï¼‰
         const imageUrl = "https://i.ibb.co/5hgrTrwd/dlt.jpg";
 
-        // ÉèÖÃÍ¼Æ¬¸²¸Ç·¶Î§£¨y¶ÔÓ¦¸ß¶È£¬x¶ÔÓ¦¿í¶È£©
-        const imageBounds = [[0, 0], [857, 1142]]; // 1km¸ß=1000µ¥Î»£¬2km¿í=2000µ¥Î»
+        // è®¾ç½®å›¾ç‰‡è¦†ç›–èŒƒå›´ï¼ˆyå¯¹åº”é«˜åº¦ï¼Œxå¯¹åº”å®½åº¦ï¼‰
+        const imageBounds = [[0, 0], [857, 1142]]; // 1kmé«˜=1000å•ä½ï¼Œ2kmå®½=2000å•ä½
 
         L.imageOverlay(imageUrl, imageBounds).addTo(map);
-        map.setView([500, 1000], 0); // ÖĞĞÄµã×ø±ê[y,x]
+        map.setView([500, 1000], 0); // ä¸­å¿ƒç‚¹åæ ‡[y,x]
 
-        // ´ò¿¨µãÊı¾İ£¨°´ĞèĞŞ¸Ä£©
+        // æ‰“å¡ç‚¹æ•°æ®ï¼ˆæŒ‰éœ€ä¿®æ”¹ï¼‰
         const markers = [
             {
                 pos: [300, 500],
-                title: "¹Û¹â¸ó",
+                title: "è§‚å…‰é˜",
                 img: "https://i.ibb.co/JjWd5ZD2/dms1.webp",
-                desc: "ÃÀ¾°¾¡ÊÕÑÛµ×"
+                desc: "ç¾æ™¯å°½æ”¶çœ¼åº•"
             },
             {
                 pos: [323, 546],
-                title: "´óÄ¾É½²èÊÒ",
+                title: "å¤§æœ¨å±±èŒ¶å®¤",
                 img: "https://i.ibb.co/FpxzrdM/dms4.jpg",
-                desc: "ÓÚ2015ÄêµÇÉÏ¸£²¼Ë¹×îÈ¨ÍşµÄµ×¿¯£¬±»ÆÀÎª30¸öÑÇÖŞ¾­µä½¨ÖşÖ®Ò»"
+                desc: "äº2015å¹´ç™»ä¸Šç¦å¸ƒæ–¯æœ€æƒå¨çš„åº•åˆŠï¼Œè¢«è¯„ä¸º30ä¸ªäºšæ´²ç»å…¸å»ºç­‘ä¹‹ä¸€"
             },
             {
                 pos: [280, 588],
-                title: "ÓñÀ¼Í¤",
+                title: "ç‰å…°äº­",
                 img: "https://i.ibb.co/6cC2BFML/ylt1.jpg",
-                desc: "²É²èĞ¡í¬£¬ÈçÓñÈçÀ¼"
+                desc: "é‡‡èŒ¶å°æ†©ï¼Œå¦‚ç‰å¦‚å…°"
             },
             {
                 pos: [367, 617],
-                title: "ÔÄÜøÍ¤",
+                title: "é˜…èŒ—äº­",
                 img: "https://i.ibb.co/ZRpcWp5k/dms5.jpg",
-                desc: "Æ·ÜøÉÍ¾°£¬ÔÄ²èÔÄ¼º"
+                desc: "å“èŒ—èµæ™¯ï¼Œé˜…èŒ¶é˜…å·±"
             },
             {
                 pos: [263, 522],
-                title: "²É²èÌåÑéÇø",
+                title: "é‡‡èŒ¶ä½“éªŒåŒº",
                 img: "https://i.ibb.co/JjWd5ZD2/dms1.webp",
-                desc: "ÀÍ¶¯×î¹âÈÙ£¡"
+                desc: "åŠ³åŠ¨æœ€å…‰è£ï¼"
             },
             {
                 pos: [384, 503],
-                title: "¹Û¾°ÖñÍ¤",
+                title: "è§‚æ™¯ç«¹äº­",
                 img: "https://i.ibb.co/DfX4YWjC/dms2.jpg",
-                desc: "Öñº£ÂşÂş"
+                desc: "ç«¹æµ·æ¼«æ¼«"
             },
             {
                 pos: [93, 739],
-                title: "¹Û¾°ÖñÍ¤",
+                title: "è§‚æ™¯ç«¹äº­",
                 img: "https://i.ibb.co/DfX4YWjC/dms2.jpg",
-                desc: "Öñº£ÂşÂş"
+                desc: "ç«¹æµ·æ¼«æ¼«"
             }
         ];
 
-        // Ìí¼Ó±ê¼Çµã
+        // æ·»åŠ æ ‡è®°ç‚¹
         markers.forEach(marker => {
             L.marker(marker.pos).addTo(map)
                 .bindPopup(`
