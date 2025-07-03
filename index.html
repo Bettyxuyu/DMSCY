@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>大木山茶园打卡地图</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
@@ -87,12 +85,12 @@
         markers.forEach(marker => {
             L.marker(marker.pos).addTo(map)
                 .bindPopup(`
-              <div class="custom-popup">
-                <h3>${marker.title}</h3>
-                <img src="${marker.img}" alt="${marker.title}">
-                <p>${marker.desc}</p>
-              </div>
-            `);
+                      <div class="custom-popup">
+                        <h3>${marker.title}</h3>
+                        <img src="${marker.img}" alt="${marker.title}">
+                        <p>${marker.desc}</p>
+                      </div>
+                    `);
         });
     </script>
 </body>
