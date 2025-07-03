@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>大木山茶园打卡地图</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+        }
+
+        .custom-popup img {
+            width: 250px;
+            border: 3px solid #8BC34A;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+    // 初始化地图
+    const map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -1,
+      maxZoom: 5
+    });
+
+    // 替换为你的茶园图片URL（需先上传到ImgBB）
+        const imageUrl = "https://i.ibb.co/5hgrTrwd/dlt.jpg" ;
+
+    // 设置图片覆盖范围（y对应高度，x对应宽度）
+    const imageBounds = [[0, 0], [857,1142]]; // 1km高=1000单位，2km宽=2000单位
+
+    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+    map.setView([500, 1000], 0); // 中心点坐标[y,x]
+
+    // 打卡点数据（按需修改）
+    const markers = [
+      {
+        pos: [300, 500],
+        title: "观光阁",
+        img: "https://i.ibb.co/JjWd5ZD2/dms1.webp",
+        desc: "美景尽收眼底"
+      },
+      {
+        pos: [323, 546],
+        title: "大木山茶室",
+        img: "https://i.ibb.co/FpxzrdM/dms4.jpg",
+        desc: "于2015年登上福布斯最权威的底刊，被评为30个亚洲经典建筑之一"
+        },
+      {
+            pos: [280, 588],
+            title: "玉兰亭",
+          img: "https://i.ibb.co/6cC2BFML/ylt1.jpg",
+            desc: "采茶小憩，如玉如兰"
+        },
+        {
+            pos: [367, 617],
+            title: "阅茗亭",
+            img: "https://i.ibb.co/ZRpcWp5k/dms5.jpg",
+            desc: "品茗赏景，阅茶阅己"
+        },
+        {
+            pos: [263, 522],
+            title: "采茶体验区",
+            img: "https://i.ibb.co/JjWd5ZD2/dms1.webp",
+            desc: "劳动最光荣！"
+        },
+        {
+            pos: [384, 503],
+            title: "观景竹亭",
+            img: "https://i.ibb.co/DfX4YWjC/dms2.jpg",
+            desc: "竹海漫漫"
+        },
+        {
+            pos: [93, 739],
+            title: "观景竹亭",
+            img: "https://i.ibb.co/DfX4YWjC/dms2.jpg",
+            desc: "竹海漫漫"
+        }
+    ];
+
+    // 添加标记点
+    markers.forEach(marker => {
+      L.marker(marker.pos).addTo(map)
+        .bindPopup(`
+          <div class="custom-popup">
+            <h3>${marker.title}</h3>
+            <img src="${marker.img}" alt="${marker.title}">
+            <p>${marker.desc}</p>
+          </div>
+        `);
+    });
+    </script>
+</body>
+</html>
