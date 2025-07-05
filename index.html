@@ -29,10 +29,10 @@
         });
 
         // 替换为你的茶园图片URL（需先上传到ImgBB）
-        const imageUrl = "https://i.ibb.co/5hgrTrwd/dlt.jpg";
+        const imageUrl = "https://i.ibb.co/NhSKHtN/20250705233206.jpg";
 
         // 设置图片覆盖范围（y对应高度，x对应宽度）
-        const imageBounds = [[0, 0], [857, 1142]]; // 1km高=1000单位，2km宽=2000单位
+        const imageBounds = [[100, 370], [820, 1630]]; // 1km高=1000单位，2km宽=2000单位
 
         L.imageOverlay(imageUrl, imageBounds).addTo(map);
         map.setView([500, 1000], 0); // 中心点坐标[y,x]
@@ -40,47 +40,78 @@
         // 打卡点数据（按需修改）
         const markers = [
             {
-                pos: [300, 500],
-                title: "观光阁",
-                img: "https://i.ibb.co/JjWd5ZD2/dms1.webp",
-                desc: "美景尽收眼底"
-            },
-            {
-                pos: [323, 546],
+                pos: [473, 487],
                 title: "大木山茶室",
                 img: "https://i.ibb.co/FpxzrdM/dms4.jpg",
+                img: "https://i.ibb.co/Kc6ktXZh/cs.jpg",
                 desc: "于2015年登上福布斯最权威的底刊，被评为30个亚洲经典建筑之一"
             },
             {
-                pos: [280, 588],
+                pos: [559,538],
+                title: "荷花池",
+                img: "https://i.ibb.co/QjKkwmbz/hhc.jpg",
+                desc: "于2015年登上福布斯最权威的底刊，被评为30个亚洲经典建筑之一"
+            },
+            {
+                pos: [424, 643],
                 title: "玉兰亭",
                 img: "https://i.ibb.co/6cC2BFML/ylt1.jpg",
                 desc: "采茶小憩，如玉如兰"
             },
             {
-                pos: [367, 617],
+                pos: [542, 699],
                 title: "阅茗亭",
-                img: "https://i.ibb.co/ZRpcWp5k/dms5.jpg",
+                img: "https://i.ibb.co/chhS0k7g/ymt.jpg",
                 desc: "品茗赏景，阅茶阅己"
             },
             {
-                pos: [263, 522],
-                title: "采茶体验区",
-                img: "https://i.ibb.co/JjWd5ZD2/dms1.webp",
+                pos: [643, 567],
+                title: "香天下",
+                img: "https://i.ibb.co/C3qq1czF/xtx.jpg",
                 desc: "劳动最光荣！"
             },
             {
-                pos: [384, 503],
-                title: "观景竹亭",
-                img: "https://i.ibb.co/DfX4YWjC/dms2.jpg",
+                pos: [707, 1311],
+                title: "大木山游客中心",
+                img: "https://i.ibb.co/WWZfXzcs/dms.jpg",
                 desc: "竹海漫漫"
             },
             {
-                pos: [93, 739],
-                title: "观景竹亭",
-                img: "https://i.ibb.co/DfX4YWjC/dms2.jpg",
+                pos: [663, 1197],
+                title: "爱心石打卡点",
+                img:"https://i.ibb.co/d0s94NKD/axs.jpg",
                 desc: "竹海漫漫"
-            }
+            },
+            {
+                pos: [591, 1243],
+                title: "村落",
+                img: "https://i.ibb.co/jvrZ0mwF/cl.jpg",
+                desc: "竹海漫漫"
+            },
+            {
+                pos: [303, 1265],
+                title: "城墙路",
+                img:"https://i.ibb.co/MyzK37TV/cql.jpg",
+                desc: "竹海漫漫"
+            },
+            {
+                pos: [274, 1385],
+                title: "麦浪茶田",
+                img: "https://i.ibb.co/Gvynrjyz/ml.jpg",
+                desc: "竹海漫漫"
+            },
+            {
+                pos: [240, 1241],
+                title: "石板小径",
+                img: "https://i.ibb.co/ZRHvWwnw/sbl.jpg",
+                desc: "竹海漫漫"
+            },
+            {
+                pos: [152, 1194],
+                title: "木建筑",
+                img: "https://i.ibb.co/TBXMv8Mr/xt.jpg",
+                desc: "竹海漫漫"
+            },
         ];
 
         // 添加标记点
